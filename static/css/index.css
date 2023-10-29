@@ -1,0 +1,6 @@
+/* Specific style for "index.html"-site */
+
+.clickable-cell:hover {
+    cursor: pointer;
+    background-color: lightcoral;
+}
