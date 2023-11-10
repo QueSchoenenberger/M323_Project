@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+header {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em
+}
+
+p {
+    color: #666;
+}
+
+/* CSS for the "Run" button image */
+.run-button {
+    height: 25px;
+    width: 25px;
+    margin-bottom: 5px;
+}
+
+.download-btn {
+    height: 50px;
+    width: 50px;
+    margin-left: 0.5em;
+}
+
+.subject {
+    border-radius: 2em;
+    padding: 1em;
+    background-color: #b1b9f8;
+}
+
+.export {
+    align-content: center;
+}
+
+pre {
+    background-color: #f1f1f1;
+    border-radius: 1em;
+    border: 1px grey solid;
+    padding: 1em;
+}

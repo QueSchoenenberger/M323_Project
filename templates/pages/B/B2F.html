@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernnachweis - B2F</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/python/python.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../static/css/pages.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="container">
+    <header>
+        <h1>Lernnachweis zur Kompetenz B2F</h1>
+        <img class="download-btn" src="../../../static/img/download-pdf.png" alt="Run" onclick="download('lernnachweis_B2F.pdf')">
+    </header>
+
+    <p class="subject"><strong>Thema:</strong> Verwendung von Funktionen als Argumente für höherwertige Funktionen</p>
+
+    <h2>Einleitung</h2>
+    <p>
+        Die Kompetenz B2F bezieht sich darauf, Funktionen als Argumente für andere Funktionen zu verwenden, um dadurch höherwertige Funktionen zu erstellen. Dieser Ansatz, bekannt als "Funktionen höherer Ordnung" (Higher-Order Functions), ermöglicht eine elegante und flexible Programmierung. In dieser Dokumentation werden wir den Einsatz von Funktionen als Argumente anhand von Python-Beispielen erläutern.
+    </p>
+
+    <h2>Warum ist die Verwendung von Funktionen als Argumenten wichtig?</h2>
+    <p>
+        Die Verwendung von Funktionen als Argumenten erlaubt die dynamische Anpassung des Verhaltens von Funktionen. Dies fördert die Wiederverwendbarkeit von Code und ermöglicht es, allgemeine Funktionen zu schreiben, die für verschiedene Anwendungsfälle angepasst werden können.
+    </p>
+
+    <h2>Beispiel: Funktion als Argument für höherwertige Funktion<img class="run-button" src="../../../static/img/run-code-arrow.png" alt="Run" onclick="runCode('applyOperationExample')"></h2>
+    <pre id="applyOperationExample">
+def apply_operation(func, x, y):
+    return func(x, y)
+
+def add(x, y):
+    return x + y
+
+def multiply(x, y):
+    return x * y
+
+if __name__ == '__main__':
+    # Funktionen als Argumente übergeben
+    result_add = apply_operation(add, 3, 4)
+    print(result_add)
+
+    result_multiply = apply_operation(multiply, 3, 4)
+    print(result_multiply)
+    </pre>
+
+    <h2>Beispiel: Filtern von Elementen mit einer höherwertigen Funktion<img class="run-button" src="../../../static/img/run-code-arrow.png" alt="Run" onclick="runCode('filterElementsExample')"></h2>
+    <pre id="filterElementsExample">
+def filter_elements(predicate, elements):
+    return [elem for elem in elements if predicate(elem)]
+
+def is_even(x):
+    return x % 2 == 0
+
+def is_positive(x):
+    return x > 0
+
+if __name__ == '__main__':
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    even_numbers = filter_elements(is_even, numbers)
+    print(even_numbers)
+
+    positive_numbers = filter_elements(is_positive, numbers)
+    print(positive_numbers)
+    </pre>
+
+    <p>
+        Hier wird die Funktion «filter_elements» erstellt, die eine höherwertige Funktion «predicate» verwendet, um Elemente in einer Liste zu filtern. Die Funktionen «is_even» und «is_positive» werden als Argumente übergeben, um verschiedene Filteroperationen durchzuführen.
+    </p>
+
+    <h2>Fazit</h2>
+    <p>
+        Die Verwendung von Funktionen als Argumente ermöglicht die Erstellung von höherwertigen Funktionen, die flexibel und anpassbar sind. Dieser Ansatz fördert eine elegante und modularisierte Programmierung, indem allgemeine Funktionen geschrieben werden, die für verschiedene Kontexte verwendet werden können. Die Beispiele verdeutlichen die praktische Anwendung dieser Kompetenz in der Programmierung.
+    </p>
+
+    <script src="../../../static/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

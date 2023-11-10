@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernnachweis - B1G</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/python/python.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../static/css/pages.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="container">
+    <header>
+        <h1>Lernnachweis zur Kompetenz B1G</h1>
+        <img class="download-btn" src="../../../static/img/download-pdf.png" alt="Run" onclick="download('lernnachweis_B1G.pdf')">
+    </header>
+
+    <p class="subject"><strong>Thema:</strong> Erklärung von Algorithmen</p>
+
+    <h2>Einleitung</h2>
+    <p>
+        Die Fähigkeit, Algorithmen zu verstehen und zu erklären, ist von grundlegender Bedeutung für Softwareentwickler. Ein Algorithmus ist eine schrittweise Anleitung zur Lösung eines Problems, und seine Erklärung ermöglicht es Entwicklern, Probleme zu analysieren, effiziente Lösungen zu finden und den Code zu optimieren. In dieser Dokumentation werden wir das Konzept von Algorithmen näher erläutern und dies anhand von Python-Codebeispielen veranschaulichen.
+    </p>
+
+    <h2>Was ist ein Algorithmus?</h2>
+    <p>
+        Ein Algorithmus ist eine endliche Abfolge von klaren und präzisen Anweisungen zur Lösung eines Problems. Jeder Schritt im Algorithmus sollte eindeutig und verständlich sein. Algorithmen können in verschiedenen Programmiersprachen implementiert werden, aber die Grundprinzipien sind universell.
+    </p>
+
+    <h3>1. Der Euklidische Algorithmus<img class="run-button" src="../../../static/img/run-code-arrow.png" alt="Run" onclick="runCode('euclideanAlgorithm')"></h3>
+    <p>
+        Der Euklidische Algorithmus ist ein bekannter Algorithmus zur Berechnung des größten gemeinsamen Teilers (GCD) zweier Zahlen.
+    </p>
+
+    <pre id="euclideanAlgorithm">
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+if __name__ == '__main__':
+    print(gcd(5, 25))
+    </pre>
+
+    <h3>2. Der Bubble-Sort-Algorithmus<img class="run-button" src="../../../static/img/run-code-arrow.png" alt="Run" onclick="runCode('bubbleSortAlgorithm')"></h3>
+    <p>
+        Der Bubble-Sort-Algorithmus ist ein einfacher Sortieralgorithmus, der Elemente in einer Liste in aufsteigender Reihenfolge anordnet.
+    </p>
+
+    <pre id="bubbleSortAlgorithm">
+
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+if __name__ == '__main__':
+    my_array = [3, 9, 1, 7, 5]
+    sorted_array = bubble_sort(my_array)
+    print(sorted_array)
+    </pre>
+
+    <h2>Warum sind Algorithmen wichtig?</h2>
+    <p>
+        Algorithmen sind das Herzstück der Softwareentwicklung. Sie ermöglichen die effiziente Lösung von Problemen und beeinflussen die Leistung und Skalierbarkeit von Software. Das Verständnis von Algorithmen ist entscheidend, um qualitativ hochwertigen Code zu schreiben, der sowohl verständlich als auch effizient ist.
+    </p>
+
+    <h2>Fazit</h2>
+    <p>
+        Das Erklären von Algorithmen ist eine grundlegende Fähigkeit in der Softwareentwicklung. Wir haben zwei Beispiele für Algorithmen in Python vorgestellt und gezeigt, wie sie funktionieren. Das Verständnis von Algorithmen ermöglicht es Entwicklern, bessere Lösungen zu finden und qualitativ hochwertigen Code zu schreiben. Es ist ein Schlüsselkompetenz für angehende Softwareentwickler.
+    </p>
+    <script src="../../../static/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernnachweis - B2G</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/python/python.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../static/css/pages.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="container">
+    <header>
+        <h1>Lernnachweis zur Kompetenz B2G</h1>
+        <img class="download-btn" src="../../../static/img/download-pdf.png" alt="Run" onclick="download('lernnachweis_B2G.pdf')">
+    </header>
+
+    <p class="subject"><strong>Thema:</strong> Umgang mit Funktionen als Objekten</p>
+
+    <h2>Einleitung</h2>
+    <p>
+        Die Kompetenz B2G bezieht sich darauf, Funktionen als Objekte zu behandeln, sie in Variablen zu speichern und weiterzugeben. Dieser Ansatz eröffnet vielfältige Möglichkeiten in der Programmierung, da Funktionen dadurch dynamisch manipuliert und flexibel eingesetzt werden können. In dieser Dokumentation werden wir den Umgang mit Funktionen als Objekten anhand von Python-Beispielen erklären.
+    </p>
+
+    <h2>Warum ist der Umgang mit Funktionen als Objekten wichtig?</h2>
+    <p>
+        Die Behandlung von Funktionen als Objekte ermöglicht eine höhere Abstraktion und Flexibilität im Code. Funktionen können nun in Variablen gespeichert, als Argumente an andere Funktionen übergeben und aus Funktionen heraus zurückgegeben werden. Dies erleichtert das Schreiben von allgemeinen und wiederverwendbaren Funktionen.
+    </p>
+
+    <h2>Beispiel: Funktionen in Variablen speichern und weitergeben<img class="run-button" src="../../../static/img/run-code-arrow.png" alt="Run" onclick="runCode('functionVariablesExample')"></h2>
+    <pre id="functionVariablesExample">
+def square(x):
+    return x ** 2
+
+def cube(x):
+    return x ** 3
+
+if __name__ == '__main__':
+    # Funktionen in Variablen speichern
+    power_function = square
+    print(power_function(5))
+
+    power_function = cube
+    print(power_function(5))
+
+    # Funktionen als Argumente übergeben
+    def apply_operation(func, y):
+        return func(y)
+
+    result = apply_operation(square, 4)
+    print(result)
+
+    result = apply_operation(cube, 4)
+    print(result)
+    </pre>
+
+    <h2>Beispiel: Funktionen als Rückgabewerte<img class="run-button" src="../../../static/img/run-code-arrow.png" alt="Run" onclick="runCode('functionReturnExample')"></h2>
+    <pre id="functionReturnExample">
+def square(x):
+    return x**2
+
+def cube(x):
+    return x**3
+
+def get_power_function(exponent):
+    if exponent == 2:
+        return square
+    elif exponent == 3:
+        return cube
+    else:
+        return None
+
+if __name__ == '__main__':
+    power_func = get_power_function(2)
+    if power_func:
+        print(power_func(4))
+    else:
+        print("Exponent not supported")
+
+    power_func = get_power_function(3)
+    if power_func:
+        print(power_func(4))
+    else:
+        print("Exponent not supported")
+
+    </pre>
+
+    <h2>Fazit</h2>
+    <p>
+        Der Umgang mit Funktionen als Objekten eröffnet neue Wege für flexible und dynamische Programmierung. Die Möglichkeit, Funktionen in Variablen zu speichern und weiterzugeben sowie sie als Rückgabewerte zu verwenden, ermöglicht eine höhere Abstraktionsebene und fördert die Wiederverwendbarkeit von Code. Die in dieser Dokumentation gezeigten Beispiele verdeutlichen die praktische Anwendung dieser Fähigkeit in der Programmierung.
+    </p>
+
+    <script src="../../../static/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

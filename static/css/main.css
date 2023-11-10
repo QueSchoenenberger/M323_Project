@@ -5,18 +5,28 @@ table {
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: none; /* Remove borders */
 }
 
 th, td {
-    padding: 10px;
-    text-align: center;
+    padding: 1.5em !important;
+    text-align: left;
+    border-bottom: 2px solid lightgrey;
+    font-size: x-large;
 }
 
-tr:nth-child(odd) {
-    background-color: yellow;
+th {
+    border-bottom: 4px solid lightgrey; /* Bottom border for title row */
+    font-weight: bold; /* Make the title bold */
+    font-size: xx-large;
+    padding: 0.5em !important;
 }
 
-tr:nth-child(even) {
-    background-color: lightblue;
+header {
+    font-size: xxx-large;
+    text-align: center;.
+}
+
+main {
+    margin: 4em;
 }

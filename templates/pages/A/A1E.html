@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernnachweis - A1E</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/python/python.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../static/css/pages.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+</head>
+<body class="container">
+    <header>
+        <h1>Lernnachweis zu Kompetenz A1E</h1>
+        <img class="download-btn" src="../../../static/img/download-pdf.png" alt="Run" onclick="download('lernnachweis_A1G.pdf')">
+    </header>
+
+    <p class="subject"><strong>Thema:</strong> Problemlösungsansätze in Objektorientierter, Prozeduraler und Funktionaler Programmierung in Python</p>
+
+    <p><strong>Ziel:</strong> Vermittlung des Verständnisses, wie Probleme in den verschiedenen Programmierparadigmen in Python gelöst werden und deren Vergleich.</p>
+
+    <h2>Inhalt:</h2>
+    <p>Die Lösung von Problemen in der Programmierung kann durch verschiedene Paradigmen angegangen werden, die in Python durch objektorientierte, prozedurale und funktionale Konzepte repräsentiert werden.</p>
+
+    <h3>Objektorientierte Programmierung (OO):<img class="run-button" src="../../../static/img/run-code-arrow.png" alt="Run" onclick="runCode('ooProgrammingExample')"></h3>
+    <p>OO nutzt Klassen und Objekte, um Daten und Methoden zu kapseln. Hierbei werden Probleme durch Interaktion von Objekten gelöst.</p>
+    <pre id="ooProgrammingExample">
+class Car:
+    def __init__(self, brand):
+        self.brand = brand
+
+    def drive(self):
+        print(f"{self.brand} is driving.")
+
+if __name__ == '__main__':
+    my_car = Car("Tesla")
+    my_car.drive()
+    </pre>
+
+    <h3>Prozedurale Programmierung:<img class="run-button" src="../../../static/img/run-code-arrow.png" alt="Run" onclick="runCode('proceduralProgrammingExample')"></h3>
+    <p>Die prozedurale Programmierung verwendet Funktionen, die eine Reihe von Schritten ausführen. Sie strukturiert Code in ausführbare Prozeduren.</p>
+    <pre id="proceduralProgrammingExample">
+def drive_car(brand):
+    print(f"{brand} is driving.")
+
+if __name__ == '__main__':
+    drive_car("Tesla")
+    </pre>
+    <h3>Funktionale Programmierung:<img class="run-button" src="../../../static/img/run-code-arrow.png" alt="Run" onclick="runCode('functionalProgrammingExample')"></h3>
+    <p>Funktionale Programmierung fokussiert auf unveränderliche Daten und reine Funktionen ohne Seiteneffekte. Sie zielt darauf ab, Probleme durch die Komposition von Funktionen zu lösen.</p>
+    <pre id="functionalProgrammingExample">
+def drive():
+    return lambda brand: f"{brand} is driving."
+
+if __name__ == '__main__':
+    drive_car = drive()
+    print(drive_car("Tesla"))
+    </pre>
+
+    <h2>Relevanz:</h2>
+    <p>Das Verständnis dieser Paradigmen ermöglicht es Entwicklern, die Stärken und Schwächen jedes Ansatzes zu erkennen und den geeignetsten für das jeweilige Problem auszuwählen. In Python ermöglicht die Vielseitigkeit, Elemente aus allen drei Paradigmen zu nutzen und so eine flexible und effiziente Problemlösung zu gestalten.</p>
+    <script src="../../../static/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
