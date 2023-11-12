@@ -23,8 +23,9 @@ th {
 }
 
 header {
-    font-size: xxx-large;
-    text-align: center;.
+    text-align: center;
+    font-size: 3.5rem !important;
+    padding: 0.5em
 }
 
 main {
